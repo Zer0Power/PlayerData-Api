@@ -1,7 +1,7 @@
 //---------------------------💔🚬 ᶻᵉʳᵒ༄ᴩᴏᴡᴇʀ💔🚬---------------------------//
 //Packages
 const mongoose = require("mongoose");
-const mongo_URI = 'ENTER YOUR Mongodb URI'; //EDIT HERE
+const mongo_URI = '....'; //EDIT HERE
 
 //Functions
 mongoose.connect(mongo_URI,{
