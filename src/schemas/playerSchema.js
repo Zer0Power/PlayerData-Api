@@ -55,15 +55,15 @@ const playerSchema = new mongoose.Schema({
     },
     state:{
         type:String,
-        default: 0
+        default: "player"
     },
     adminRank:{
         type:String,
-        default: 0
+        default: null
     },
     totalBans:{
         type:String,
-        default: 0
+        default: null
     },
     warns:{
         type:String,
