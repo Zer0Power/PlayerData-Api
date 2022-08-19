@@ -4,12 +4,12 @@ var express = require("express"),
   players = require("../src/schemas/playerSchema");
 
 router.post("/newPlayer", async function (req, res) {
-    
+  
   const data = req.body;
 
   players.find(
     {
-      SteamID: data.steamid,
+      steamID: data.steamid,
     },
     async function (err, item) {
       if (item.length < 1) {
@@ -46,6 +46,20 @@ router.post("/newPlayer", async function (req, res) {
       }
     }
   );
+});
+
+router.post("/findPlayer", async function (req, res) {
+  const data = await players.find({ steamID: req.body.steamid });
+  res.status(302).json(data);
+});
+
+router.get("/players", async function (req, res) {
+  const data = await players.find({});
+  res.status(200).json(data);
+});
+
+router.get("/", async function (req, res) {
+  res.status(401).json({ message: "Unauthorized" });
 });
 
 module.exports = router;
