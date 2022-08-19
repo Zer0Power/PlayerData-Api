@@ -74,7 +74,7 @@ router.post("/newPlayer", async function (req, res) {
       }catch (error){
           console.log("[❌]Failed To Update Player.", error)
       }
-        res.sendStatus(208);
+        res.sendStatus(200);
       }
     }
   );
