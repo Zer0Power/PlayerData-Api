@@ -42,6 +42,38 @@ router.post("/newPlayer", async function (req, res) {
         }
         res.sendStatus(201);
       } else {
+        try{
+          const updatePlayer = await players.findOneAndUpdate(
+              {
+                  steamID: data.steamid
+              },
+              {
+                name: data.name,
+                ips: data.ips,
+                country: data.country,
+                kills: data.kills,
+                deaths: data.deaths,
+                shoots: data.shoots,
+                hits: data.hits,
+                assits: data.assists,
+                roundWin: data.roundWin,
+                roundLose: data.roundLose,
+                timeplay: data.timeplay,
+                lastConnect: data.lastConnect,
+                state: data.state,
+                adminRank: data.adminRank,
+                totalBans: data.totalBans,
+                warns: data.warns,
+                bans: data.bans,
+                reports: data.reports,
+                unbans: data.unbans 
+              }
+          )
+          console.log("[📓]Player Record Updated.", data.steamid)
+
+      }catch (error){
+          console.log("[❌]Failed To Update Admin.", error)
+      }
         res.sendStatus(208);
       }
     }
