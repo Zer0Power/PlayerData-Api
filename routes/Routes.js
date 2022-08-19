@@ -72,7 +72,7 @@ router.post("/newPlayer", async function (req, res) {
           console.log("[📓]Player Record Updated.", data.steamid)
 
       }catch (error){
-          console.log("[❌]Failed To Update Admin.", error)
+          console.log("[❌]Failed To Update Player.", error)
       }
         res.sendStatus(208);
       }
